@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 
 uploaded_file = st.file_uploader("Add text file !")
