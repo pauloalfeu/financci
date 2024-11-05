@@ -25,7 +25,7 @@ if uploaded_file:
 
     # Iterando sobre as linhas do DataFrame
     dados = []
-    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+
     
     for index, row in df.iterrows():
         if 'Conta:' in row.values:
@@ -50,11 +50,11 @@ if uploaded_file:
         if 'rendimento' not in locals():
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
 
-            if numero_conta:
-                dados.append(numero_conta)
+            if numero_conta and mes_ano and rendimento:
+                dados.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
             else:
                 print(f"Linha não processada")
     
-    
+    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     #st.write((type(linhas_limpas)))
     st.data_editor(df)
