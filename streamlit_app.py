@@ -18,6 +18,6 @@ if uploaded_file:
         line = line.strip()
 
         # Dividindo a linha em partes usando espaços como delimitador
-        partes = line.split()
+        #partes = line.split()
 
-        st.write(partes)
+        st.write(line)
