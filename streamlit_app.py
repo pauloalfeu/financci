@@ -46,7 +46,7 @@ if uploaded_file:
             print("A linha 'mes_ano' não foi encontrada no DataFrame.")
         if 'LÍQUIDO' in row.values:
             # Encontrou a linha com "Conta:"
-            rendimento = row.iloc[row.values.tolist().index('Mês/ano') + 1]
+            rendimento = row.iloc[row.values.tolist().index('LÍQUIDO') + 1]
             dados.append(rendimento)
             #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
