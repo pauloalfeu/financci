@@ -3,6 +3,7 @@ import re
 
 uploaded_file = st.file_uploader("Add text file !")
 if uploaded_file:
+    dados=[]
     for line in uploaded_file:
         # Remover quebras de linha e espaços em branco (se necessário)
         line = line.strip()
