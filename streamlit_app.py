@@ -22,7 +22,7 @@ if uploaded_file is not None:
     st.markdown("Base de dados carregada com sucesso!")
 
     dados = []
-    for linha in lista_linhas:
+    for linha in minha_lista:
         # Remover quebras de linha e espaços em branco (se necessário)
         linha = linha.strip()
 
