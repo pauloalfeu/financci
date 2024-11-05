@@ -19,16 +19,7 @@ if uploaded_file:
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
 
-    for chave, palavra in linhas_limpas:
-        if palavra == "Conta:":
-            conta = palavra
-            dados.append([conta.group(1)])
-        else:
-            st.write("Não encontrado 'Conta:' na posição esperada.")
 
-    #dados.append([conta.group(1), mes_ano.group(1), rendimento.group(1)])
 
-    # Criar o DataFrame
-    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
-
-    st.data_editor(df)
+    st.write(print(type(minha_lista)))
+    #st.data_editor(df)
