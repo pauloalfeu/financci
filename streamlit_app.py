@@ -20,4 +20,4 @@ if uploaded_file:
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
 
-    st.write(partes)
+        st.write(partes)
