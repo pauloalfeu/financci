@@ -55,6 +55,6 @@ if uploaded_file:
 
 
     
-    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    #df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     #st.write((type(linhas_limpas)))
     st.data_editor(dados)
