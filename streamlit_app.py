@@ -29,7 +29,7 @@ if uploaded_file is not None:
             # Dividindo a linha em partes usando espaços como delimitador
         partes = linha.split()
 
-        # Encontrando os índices das palavras-chave
+        """# Encontrando os índices das palavras-chave
         indice_conta = partes.index('Conta:') + 1
         indice_mes_ano = partes.index('Mês/ano') + 1
         indice_rendimento = partes.index('RENDIMENTO') + 1
@@ -53,9 +53,9 @@ if uploaded_file is not None:
     df_copy = df.copy()
 
     # Combine the copied dataframe with the original dataframe 
-    combined_df = pd.concat([df, df_copy], axis=0)
+    combined_df = pd.concat([df, df_copy], axis=0)"""
 
-    if combined_df.empty:
+    if minha_lista.empty:
         print("DataFrame está vazio.")
     else:
-        st.data_editor(combined_df)
+        st.data_editor(minha_lista)
