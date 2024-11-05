@@ -20,6 +20,6 @@ if uploaded_file:
         partes = line.split()
 
 
-
-    st.write((type(linhas_limpas)))
-    #st.data_editor(df)
+    df = pd.DataFrame(linhas_limpas)
+    #st.write((type(linhas_limpas)))
+    st.data_editor(df)
