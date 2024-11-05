@@ -19,8 +19,8 @@ if uploaded_file:
 
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
+        dados.append(partes)
 
-
-    df = pd.DataFrame(linhas_limpas)
+    df = pd.DataFrame(dados)
     #st.write((type(linhas_limpas)))
     st.data_editor(df)
