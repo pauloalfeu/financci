@@ -21,4 +21,4 @@ if uploaded_file is not None:
     #minha_lista = uploaded_file.readlines()
     st.markdown("Base de dados carregada com sucesso!")
 
-    st.data_editor(minha_lista)
+    st.data_editor(uploaded_file)
