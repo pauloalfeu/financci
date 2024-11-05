@@ -59,4 +59,11 @@ if uploaded_file:
     for i, valor in enumerate(dados):
         df.loc[0, df.columns[i]] = valor
     
+    # Create 'mes' and 'ano' columns by splitting 'Mês/ano referência'
+    df[['MÊS', 'ANO']] = df['Mês/ano referência'].str.split('/', expand=True)
+
+    # Remove 'Mês/ano referência' column
+    df = df.drop('Mês/ano referência', axis=1)
+
+    
     st.data_editor(df)
