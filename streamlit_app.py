@@ -8,9 +8,9 @@ if uploaded_file:
         line = line.strip()
 
         # Expressões regulares para extrair os dados
-        conta = re.search(r'Conta:\s+(\S+)', linha)
-        mes_ano = re.search(r'Mês/ano referência:\s+(\S+)', linha)
-        rendimento = re.search(r'RENDIMENTO LÍQUIDO\s+(\S+)', linha)
+        conta = re.search(r'Conta:\s+(\S+)', line)
+        mes_ano = re.search(r'Mês/ano referência:\s+(\S+)', line)
+        rendimento = re.search(r'RENDIMENTO LÍQUIDO\s+(\S+)', line)
 
         if conta and mes_ano and rendimento:
             dados.append([conta.group(1), mes_ano.group(1), rendimento.group(1)])
