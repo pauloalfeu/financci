@@ -32,7 +32,7 @@ if uploaded_file:
             # Encontrou a linha com "Conta:"
             numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
             dados.append(numero_conta)
-            break  # Para o loop após encontrar a primeira ocorrência
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'numero_conta' not in locals():
             print("A linha 'Conta:' não foi encontrada no DataFrame.")
@@ -40,7 +40,7 @@ if uploaded_file:
             # Encontrou a linha com "Conta:"
             mes_ano = row.iloc[row.values.tolist().index('Mês/ano') + 2]
             dados.append(mes_ano)
-            break  # Para o loop após encontrar a primeira ocorrência
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'mes_ano' not in locals():
             print("A linha 'mes_ano' não foi encontrada no DataFrame.")
@@ -48,7 +48,7 @@ if uploaded_file:
             # Encontrou a linha com "Conta:"
             rendimento = row.iloc[row.values.tolist().index('Mês/ano') + 1]
             dados.append(rendimento)
-            break  # Para o loop após encontrar a primeira ocorrência
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'rendimento' not in locals():
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
