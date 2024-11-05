@@ -12,8 +12,8 @@ if uploaded_file:
         texto = texto.strip()
         linhas_limpas.append(texto)
         
-        dados = []
-
+    
+    dados = []
     for line in linhas_limpas:
         line = line.strip()
 
@@ -32,6 +32,6 @@ if uploaded_file:
             
         dados.append([conta, mes_ano, rendimento])
 
-        df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
 
     st.write(df)
