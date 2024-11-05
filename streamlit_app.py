@@ -1,22 +1,25 @@
 import streamlit as st
-import re
 
 uploaded_file = st.file_uploader("Add text file !")
 if uploaded_file:
     dados=[]
     for line in uploaded_file:
-        # Remover quebras de linha e espaços em branco (se necessário)
         line = line.strip()
 
-        # Expressões regulares para extrair os dados
-        conta = re.search(r'Conta:\s+(\S+)', line)
-        mes_ano = re.search(r'Mês/ano referência:\s+(\S+)', line)
-        rendimento = re.search(r'RENDIMENTO LÍQUIDO\s+(\S+)', line)
+        # Dividindo a linha em partes usando espaços como delimitador
+        partes = line.split()
 
-        if conta and mes_ano and rendimento:
-            dados.append([conta.group(1), mes_ano.group(1), rendimento.group(1)])
-        else:
-            print(f"Linha não processada: {linha}")
+        # Encontrando os índices das palavras-chave
+        indice_conta = partes.index('Conta:') + 1
+        indice_mes_ano = partes.index('Mês/ano') + 1
+        indice_rendimento = partes.index('RENDIMENTO') + 1
+
+        # Extraindo os dados
+        conta = partes[indice_conta]
+        mes_ano = partes[indice_mes_ano]
+        rendimento = partes[indice_rendimento]
+
+        dados.append([conta, mes_ano, rendimento])
 
         # Criar o DataFrame
         df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
