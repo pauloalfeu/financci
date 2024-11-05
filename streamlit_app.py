@@ -15,10 +15,10 @@ if uploaded_file:
         dados = []
 
         for line in texto:
-            linha = linha.strip()
+            line = line.strip()
 
             # Dividindo a linha em partes usando espaços como delimitador
-            partes = linha.split()
+            partes = line.split()
 
             # Encontrando os índices das palavras-chave
             indice_conta = partes.index('Conta:') + 1
