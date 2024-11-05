@@ -1,9 +1,8 @@
 streamlit
-pip
 numpy==1.23.2
 pandas
 matplotlib
 seaborn
 wordcloud
 Counter
-re
+RE
