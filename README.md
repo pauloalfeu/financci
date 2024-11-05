@@ -1,10 +1,29 @@
-# 🎈 Blank app template
+# 🎯 Financci, Gerenciador de Rendimentos.
 
-A simple Streamlit app template for you to modify!
+**Um aplicativo completo para organizar e analisar suas finanças.**
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Descrição
 
-### How to run it on your own machine
+Este gerenciador de rendimentos é uma ferramenta poderosa para:
+
+* **Rastreio de contas:** Mantenha um registro detalhado de todas as suas contas bancárias e investimentos.
+* **Prestação de contas:** Entidades públicas que precisam visualizar seus dados de maneira dinâmica, por categoria e indentificar áreas/grupos específicos de recursos.
+* **Geração de relatórios:** Gere relatórios personalizados para acompanhar seus saldos financeiros.
+
+## Funcionalidades Principais
+
+* **Cadastro de contas:** Adicione e gerencie múltiplas contas bancárias e investimentos.
+* **Lançamentos financeiros:** Registre todos os seus dados de forma intuitiva.
+* **Categorização:** Organize seus lançamentos por categorias personalizadas.
+* **Relatórios:** Gere relatórios detalhados sobre seus gastos, receitas e saldo.
+* **Gráficos:** Visualize seus dados financeiros em gráficos intuitivos para uma melhor compreensão.
+
+
+## Disponível para acesso em:
+
+[![Financci no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financci.streamlit.app/)
+
+### Instalação
 
 1. Install the requirements
 
