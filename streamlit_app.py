@@ -51,7 +51,7 @@ if uploaded_file:
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
 
             if numero_conta and mes_ano and rendimento:
-                df.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
+                dados.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
             else:
                 print(f"Linha não processada")
     
