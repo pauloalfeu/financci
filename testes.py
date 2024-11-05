@@ -12,7 +12,6 @@ if uploaded_file:
         texto = texto.strip()
         linhas_limpas.append(texto)
         
-    
     dados = []
     for line in linhas_limpas:
         line = line.strip()
