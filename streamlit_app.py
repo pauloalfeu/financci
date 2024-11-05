@@ -13,14 +13,27 @@ if uploaded_file:
         texto = texto.strip()
         linhas_limpas.append(texto)
         
-    dados = []
+    palavras = []
     for line in linhas_limpas:
         line = line.strip()
 
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
-        dados.append(partes)
+        palavras.append(partes)
 
-    df = pd.DataFrame(dados)
+    df = pd.DataFrame(palavras)
+
+    # Iterando sobre as linhas do DataFrame
+    dados = []
+    for index, row in df.iterrows():
+        if 'Conta:' in row.values:
+            # Encontrou a linha com "Conta:"
+            numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
+            dados.append([numero_conta.group(1)])
+            break  # Para o loop após encontrar a primeira ocorrência
+        # Se não encontrar a linha "Conta:", imprime uma mensagem
+        if 'numero_conta' not in locals():
+            print("A linha 'Conta:' não foi encontrada no DataFrame.")
+    
     #st.write((type(linhas_limpas)))
-    st.data_editor(df)
+    st.data_editor(dados)
