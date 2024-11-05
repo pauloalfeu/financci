@@ -88,7 +88,7 @@ if uploaded_file is not None:
     dtf = formatar_dados_df(df)
 
 
-    if df.empty:
+    if dtf.empty:
         print("DataFrame está vazio.")
     else:
         st.data_editor(dtf)
