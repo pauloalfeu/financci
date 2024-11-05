@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import regex
+import re
 
 
 st.title("🎯 Financci")
