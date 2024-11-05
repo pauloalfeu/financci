@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 from collections import Counter
-import re
+
 
 
 st.title("🎯 Financci")
@@ -25,12 +25,11 @@ if uploaded_file is not None:
         """Extrai dados específicos de uma lista de strings e retorna um DataFrame.
 
         Args:
-            lista_linhas: Uma lista de strings, onde cada string representa uma linha do arquivo.
+        lista_linhas: Uma lista de strings, onde cada string representa uma linha do arquivo.
 
         Returns:
-            Um DataFrame com as colunas 'conta', 'Mês/ano referência' e 'RENDIMENTO LÍQUIDO'.
+        Um DataFrame com as colunas 'conta', 'Mês/ano referência' e 'RENDIMENTO LÍQUIDO'.
         """
-
         dados = []
         for linha in lista_linhas:
             # Remover quebras de linha e espaços em branco (se necessário)
@@ -46,11 +45,15 @@ if uploaded_file is not None:
             else:
                 print(f"Linha não processada: {linha}")
 
-        # Criar o DataFrame
+            # Criar o DataFrame
         df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
-
-        
         return df
+
+        """# Exemplo de uso:
+        minha_lista = [
+            "Conta: 45029-0 SIGTV410480820220001 GND3 Mês/ano referência: JANEIRO/2023 RENDIMENTO LÍQUIDO 1.362,38",
+            # ... outras linhas ...
+        ]"""
 
     def formatar_dados_df(dataframe):
         # prompt: Usando o DataFrame df: separar Mês e Ano e remover 'Mês/ano referência'
@@ -76,11 +79,11 @@ if uploaded_file is not None:
 
     #################### CHAMANDHO AS FUNÇOES ##################################
 
-    df = extrair_dados_lista(minha_lista)
-    df = formatar_dados_df(df)
+df = extrair_dados_lista(minha_lista)
+df = formatar_dados_df(df)
 
 
-    if df.empty:
-        print("DataFrame está vazio.")
-    else:
-        st.data_editor(df)
+if df.empty:
+    print("DataFrame está vazio.")
+else:
+    st.data_editor(df)
