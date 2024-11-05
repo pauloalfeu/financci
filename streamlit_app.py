@@ -35,5 +35,6 @@ if uploaded_file:
         if 'numero_conta' not in locals():
             print("A linha 'Conta:' não foi encontrada no DataFrame.")
     
+    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     #st.write((type(linhas_limpas)))
-    st.data_editor(dados)
+    st.data_editor(df)
