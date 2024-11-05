@@ -29,12 +29,12 @@ if uploaded_file:
         if 'Conta:' in row.values:
             # Encontrou a linha com "Conta:"
             numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
-            dados.append(numero_conta)
+            dados.append(numero_conta.group(1))
             break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'numero_conta' not in locals():
             print("A linha 'Conta:' não foi encontrada no DataFrame.")
     
-    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    #df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     #st.write((type(linhas_limpas)))
-    st.data_editor(df)
+    st.data_editor(dados)
