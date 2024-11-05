@@ -79,11 +79,11 @@ if uploaded_file is not None:
 
     #################### CHAMANDHO AS FUNÇOES ##################################
 
-df = extrair_dados_lista(minha_lista)
-df = formatar_dados_df(df)
+    df = extrair_dados_lista(minha_lista)
+    df = formatar_dados_df(df)
 
 
-if df.empty:
-    print("DataFrame está vazio.")
-else:
-    st.data_editor(df)
+    if df.empty:
+        print("DataFrame está vazio.")
+    else:
+        st.data_editor(df)
