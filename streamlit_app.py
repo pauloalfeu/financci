@@ -50,8 +50,8 @@ if uploaded_file:
         if 'rendimento' not in locals():
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
 
-            if numero_conta and mes_ano and rendimento:
-                dados.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
+            if numero_conta:
+                dados.append(numero_conta)
             else:
                 print(f"Linha não processada")
     
