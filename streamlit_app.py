@@ -7,9 +7,9 @@ import pandas as pd
 uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=True)
 
 # Processando os arquivos
+if uploaded_files.type != 'text/csv':
+    st.warning(f"O arquivo {uploaded_file.name} não é um arquivo CSV. Verifique o tipo do arquivo.")
 if uploaded_files is not None:
-    if uploaded_files.type != 'text/csv':
-        st.warning(f"O arquivo {uploaded_file.name} não é um arquivo CSV. Verifique o tipo do arquivo.")
     for uploaded_file in uploaded_files:
         linhas_limpas = []
 
