@@ -6,7 +6,8 @@ import pandas as pd
 # Permite o upload de múltiplos arquivos
 uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=True)
 
-if uploaded_file:
+# Processando os arquivos
+if uploaded_files is not None:
     for uploaded_file in uploaded_files:
         linhas_limpas = []
 
