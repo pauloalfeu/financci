@@ -54,7 +54,9 @@ if uploaded_file:
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
 
 
+    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    # Adicionando os dados da imagem ao DataFrame
+    for i, valor in enumerate(dados):
+        df.loc[0, df.columns[i]] = valor
     
-    #df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
-    #st.write((type(linhas_limpas)))
-    st.data_editor(dados)
+    st.data_editor(df)
