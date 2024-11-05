@@ -4,7 +4,6 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
-import PIL.Image as Image
 from collections import Counter
 import re
 
