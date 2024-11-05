@@ -10,7 +10,7 @@ if uploaded_file:
         partes = line.split()
 
         # Encontrando os índices das palavras-chave
-        indice_conta = partes.index('Conta:') + 1
+        #indice_conta = partes.index('Conta:') + 1
         indice_mes_ano = partes.index('Mês/ano') + 1
         indice_rendimento = partes.index('RENDIMENTO') + 1
 
