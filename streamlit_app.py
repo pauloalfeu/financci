@@ -10,15 +10,17 @@ from collections import Counter
 
 st.title("🎯 Financci")
 
-######### Funções
-def extrair_dados_lista(lista_linhas):
-    """Extrai dados específicos de uma lista de strings e retorna um DataFrame.
-    Args:
-    lista_linhas: Uma lista de strings, onde cada string representa uma linha do arquivo.
 
-    Returns:
-    Um DataFrame com as colunas 'conta', 'Mês/ano referência' e 'RENDIMENTO LÍQUIDO'.
-    """
+################################### SEÇÃO DE UPLOAD DE DATAFRAME
+st.divider()
+st.markdown("##### Carregue um arquivo _.txt_ clicando em \"Browse files\" no campo abaixo:")
+st.markdown("> **Importante:** siga as etapas apresentadas na guia **Tutorial de upload de arquivos** para fazer o download do arquivo correto.")
+uploaded_file = st.file_uploader("", type=["txt"])
+if uploaded_file is not None:
+    # Recebendo arquivo.txt:
+    minha_lista = uploaded_file.readlines()
+    st.markdown("Base de dados carregada com sucesso!")
+
     dados = []
     for linha in lista_linhas:
         # Remover quebras de linha e espaços em branco (se necessário)
@@ -41,46 +43,19 @@ def extrair_dados_lista(lista_linhas):
 
         # Criar o DataFrame
     df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
-    return df
-
-
-def formatar_dados_df(dataframe):
-    # prompt: Usando o DataFrame df: separar Mês e Ano e remover 'Mês/ano referência'
-
+    
     # Create 'mes' and 'ano' columns by splitting 'Mês/ano referência'
-    dataframe[['MÊS', 'ANO']] = dataframe['Mês/ano referência'].str.split('/', expand=True)
+    df[['MÊS', 'ANO']] = df['Mês/ano referência'].str.split('/', expand=True)
 
     # Remove 'Mês/ano referência' column
-    dataframe = dataframe.drop('Mês/ano referência', axis=1)
-
-    return dataframe
-
-def dataframe_combine(datafrane):
-    # prompt: Usando o DataFrame df: fazer um cópia e combinar os dataframes
-
+    df = dataframe.drop('Mês/ano referência', axis=1)
     # Create a copy of the dataframe
     df_copy = df.copy()
 
     # Combine the copied dataframe with the original dataframe 
     combined_df = pd.concat([df, df_copy], axis=0)
 
-    return combined_df
-
-################################### SEÇÃO DE UPLOAD DE DATAFRAME
-st.divider()
-st.markdown("##### Carregue um arquivo _.txt_ clicando em \"Browse files\" no campo abaixo:")
-st.markdown("> **Importante:** siga as etapas apresentadas na guia **Tutorial de upload de arquivos** para fazer o download do arquivo correto.")
-uploaded_file = st.file_uploader("", type=["txt"])
-if uploaded_file is not None:
-    # Recebendo arquivo.txt:
-    minha_lista = uploaded_file.readlines()
-    st.markdown("Base de dados carregada com sucesso!")
-
-    df = extrair_dados_lista(minha_lista)
-    dtf = formatar_dados_df(df)
-
-
-    if dtf.empty:
+    if combined_df.empty:
         print("DataFrame está vazio.")
     else:
-        st.data_editor(dtf)
+        st.data_editor(combined_df)
