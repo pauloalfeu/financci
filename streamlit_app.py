@@ -18,7 +18,7 @@ st.markdown("> **Importante:** siga as etapas apresentadas na guia **Tutorial de
 uploaded_file = st.file_uploader("")
 if uploaded_file is not None:
     # Recebendo arquivo.txt:
-    #minha_lista = uploaded_file.readlines()
+    minha_lista = uploaded_file
     st.markdown("Base de dados carregada com sucesso!")
 
-    st.data_editor(uploaded_file)
+    st.data_editor(minha_lista)
