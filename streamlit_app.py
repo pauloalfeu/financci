@@ -29,12 +29,30 @@ if uploaded_file:
         if 'Conta:' in row.values:
             # Encontrou a linha com "Conta:"
             numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
-            dados.append(numero_conta.group(1))
             break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'numero_conta' not in locals():
             print("A linha 'Conta:' não foi encontrada no DataFrame.")
+        if 'Mês/ano' in row.values:
+            # Encontrou a linha com "Conta:"
+            mes_ano = row.iloc[row.values.tolist().index('Mês/ano') + 2]
+            break  # Para o loop após encontrar a primeira ocorrência
+        # Se não encontrar a linha "Conta:", imprime uma mensagem
+        if 'mes_ano' not in locals():
+            print("A linha 'mes_ano' não foi encontrada no DataFrame.")
+        if 'LÍQUIDO' in row.values:
+            # Encontrou a linha com "Conta:"
+            rendimento = row.iloc[row.values.tolist().index('Mês/ano') + 1]
+            break  # Para o loop após encontrar a primeira ocorrência
+        # Se não encontrar a linha "Conta:", imprime uma mensagem
+        if 'rendimento' not in locals():
+            print("A linha 'rendimento' não foi encontrada no DataFrame.")
+
+        if numero_conta and mes_ano and rendimento:
+            dados.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
+        else:
+            print(f"Linha não processada")
     
-    #df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     #st.write((type(linhas_limpas)))
-    st.data_editor(dados)
+    st.data_editor(df)
