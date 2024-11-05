@@ -71,4 +71,4 @@ if uploaded_files is not None:
 
 
         st.data_editor(df)
-        st.error("Erro.")
+    st.error("Erro.")
