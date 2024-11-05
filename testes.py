@@ -25,36 +25,45 @@ if uploaded_file:
 
     # Iterando sobre as linhas do DataFrame
     dados = []
-    df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+
     
     for index, row in df.iterrows():
         if 'Conta:' in row.values:
             # Encontrou a linha com "Conta:"
             numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
-            break  # Para o loop após encontrar a primeira ocorrência
+            dados.append(numero_conta)
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'numero_conta' not in locals():
             print("A linha 'Conta:' não foi encontrada no DataFrame.")
         if 'Mês/ano' in row.values:
             # Encontrou a linha com "Conta:"
             mes_ano = row.iloc[row.values.tolist().index('Mês/ano') + 2]
-            break  # Para o loop após encontrar a primeira ocorrência
+            dados.append(mes_ano)
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'mes_ano' not in locals():
             print("A linha 'mes_ano' não foi encontrada no DataFrame.")
         if 'LÍQUIDO' in row.values:
             # Encontrou a linha com "Conta:"
-            rendimento = row.iloc[row.values.tolist().index('Mês/ano') + 1]
-            break  # Para o loop após encontrar a primeira ocorrência
+            rendimento = row.iloc[row.values.tolist().index('LÍQUIDO') + 1]
+            dados.append(rendimento)
+            #break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'rendimento' not in locals():
             print("A linha 'rendimento' não foi encontrada no DataFrame.")
 
-            if numero_conta and mes_ano and rendimento:
-                dados.append([numero_conta.group(1), mes_ano.group(1), rendimento.group(1)])
-            else:
-                print(f"Linha não processada")
+
+    df = pd.DataFrame(columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+    # Adicionando os dados da imagem ao DataFrame
+    for i, valor in enumerate(dados):
+        df.loc[0, df.columns[i]] = valor
     
+    # Create 'mes' and 'ano' columns by splitting 'Mês/ano referência'
+    df[['MÊS', 'ANO']] = df['Mês/ano referência'].str.split('/', expand=True)
+
+    # Remove 'Mês/ano referência' column
+    df = df.drop('Mês/ano referência', axis=1)
+
     
-    #st.write((type(linhas_limpas)))
     st.data_editor(df)
