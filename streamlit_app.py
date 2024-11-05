@@ -43,11 +43,6 @@ def extrair_dados_lista(lista_linhas):
     df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
     return df
 
-"""# Exemplo de uso:
-        minha_lista = [
-            "Conta: 45029-0 SIGTV410480820220001 GND3 Mês/ano referência: JANEIRO/2023 RENDIMENTO LÍQUIDO 1.362,38",
-            # ... outras linhas ...
-]"""
 
 def formatar_dados_df(dataframe):
     # prompt: Usando o DataFrame df: separar Mês e Ano e remover 'Mês/ano referência'
