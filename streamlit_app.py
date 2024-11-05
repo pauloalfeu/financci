@@ -4,5 +4,6 @@ import pandas as pd
 uploaded_file = st.file_uploader("Escolha um arquivo .txt", type=["txt"])
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, sep='\s+')  # Ajustar o separador se necessário
+    minha_lista = uploaded_file.readlines()
+    df = pd.read_csv(minha_lista, sep='\s+')  # Ajustar o separador se necessário
     st.dataframe(df)
