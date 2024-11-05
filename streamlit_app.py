@@ -19,7 +19,7 @@ if uploaded_file:
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
 
-    for palavra in linhas_limpas:
+    for chave, palavra in linhas_limpas:
         if palavra == "Conta:":
             conta = palavra
             dados.append([conta.group(1)])
