@@ -19,8 +19,7 @@ if uploaded_file:
         # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
 
-        # Encontrando os índices das palavras-chave
-        indice_conta = line("Conta:") + 1
+        
 
 
-    st.write(indice_conta)
+    st.write(partes[1])
