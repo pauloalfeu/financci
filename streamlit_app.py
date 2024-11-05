@@ -15,7 +15,7 @@ st.title("🎯 Financci")
 st.divider()
 st.markdown("##### Carregue um arquivo _.txt_ clicando em \"Browse files\" no campo abaixo:")
 st.markdown("> **Importante:** siga as etapas apresentadas na guia **Tutorial de upload de arquivos** para fazer o download do arquivo correto.")
-uploaded_file = st.file_uploader("")
+uploaded_file = st.file_uploader("", type=["txt"])
 if uploaded_file is not None:
     # Recebendo arquivo.txt:
     minha_lista = uploaded_file.readlines()
