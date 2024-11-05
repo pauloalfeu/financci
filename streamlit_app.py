@@ -21,5 +21,5 @@ if uploaded_file:
 
 
 
-    st.write(print(type(minha_lista)))
+    st.write(print(type(linhas_limpas)))
     #st.data_editor(df)
