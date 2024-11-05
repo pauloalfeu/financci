@@ -2,7 +2,6 @@ streamlit
 numpy==1.23.2
 pandas
 matplotlib
-StringIO
 seaborn
 wordcloud
 PIL.Image
