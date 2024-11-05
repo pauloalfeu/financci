@@ -22,4 +22,4 @@ if uploaded_file:
         
 
 
-    st.write(partes[1])
+    st.write(linhas_limpas[1])
