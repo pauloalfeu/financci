@@ -15,13 +15,13 @@ st.title("🎯 Financci")
 st.divider()
 st.markdown("##### Carregue um arquivo _.txt_ clicando em \"Browse files\" no campo abaixo:")
 st.markdown("> **Importante:** siga as etapas apresentadas na guia **Tutorial de upload de arquivos** para fazer o download do arquivo correto.")
-uploaded_file = st.file_uploader("", type=["txt"])
+uploaded_file = st.file_uploader("")
 if uploaded_file is not None:
     # Recebendo arquivo.txt:
     minha_lista = uploaded_file.readlines()
     st.markdown("Base de dados carregada com sucesso!")
 
-    dados = []
+    #dados = []
     for linha in minha_lista:
         # Remover quebras de linha e espaços em branco (se necessário)
         linha = linha.strip()
