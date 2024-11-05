@@ -29,7 +29,7 @@ if uploaded_file:
         if 'Conta:' in row.values:
             # Encontrou a linha com "Conta:"
             numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
-            dados.append([numero_conta.group(1)])
+            dados.append(numero_conta)
             break  # Para o loop após encontrar a primeira ocorrência
         # Se não encontrar a linha "Conta:", imprime uma mensagem
         if 'numero_conta' not in locals():
