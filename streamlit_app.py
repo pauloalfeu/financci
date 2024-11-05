@@ -4,14 +4,11 @@ uploaded_file = st.file_uploader("Add text file !")
 if uploaded_file:
     dados=[]
     for line in uploaded_file:
-        line = line.strip()
-
-        # Dividindo a linha em partes usando espaços como delimitador
         partes = line.split()
 
         # Encontrando os índices das palavras-chave
-        #indice_conta = partes.index('Conta:') + 1
-        indice_mes_ano = partes.index('Mês/ano') + 1
+        indice_conta = partes.index('Conta:') + 1
+        #indice_mes_ano = partes.index('Mês/ano') + 1
         indice_rendimento = partes.index('RENDIMENTO') + 1
 
         # Extraindo os dados
