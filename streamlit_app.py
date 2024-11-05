@@ -14,22 +14,22 @@ if uploaded_file:
         
         dados = []
 
-        for line in texto:
-            line = line.strip()
+    for line in texto:
+        line = line.strip()
 
-            # Dividindo a linha em partes usando espaços como delimitador
-            partes = line.split()
+        # Dividindo a linha em partes usando espaços como delimitador
+        partes = line.split()
 
-            # Encontrando os índices das palavras-chave
-            indice_conta = line.index('Conta:') + 1
-            indice_mes_ano = line.index('Mês/ano') + 1
-            indice_rendimento = line.index('RENDIMENTO') + 1
+        # Encontrando os índices das palavras-chave
+        indice_conta = partes.index('Conta:') + 1
+        indice_mes_ano = partes.index('Mês/ano') + 1
+        indice_rendimento = partes.index('RENDIMENTO') + 1
 
-            # Extraindo os dados
-            conta = partes[indice_conta]
-            mes_ano = partes[indice_mes_ano]
-            rendimento = partes[indice_rendimento]
+        # Extraindo os dados
+        conta = partes[indice_conta]
+        mes_ano = partes[indice_mes_ano]
+        rendimento = partes[indice_rendimento]
             
-            dados.append([conta, mes_ano, rendimento])
+        dados.append([conta, mes_ano, rendimento])
 
-            df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+        df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
