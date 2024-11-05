@@ -14,7 +14,7 @@ if uploaded_file:
         
         dados = []
 
-    for line in texto:
+    """for line in texto:
         line = line.strip()
 
         # Dividindo a linha em partes usando espaços como delimitador
@@ -32,4 +32,6 @@ if uploaded_file:
             
         dados.append([conta, mes_ano, rendimento])
 
-        df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
+        df = pd.DataFrame(dados, columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])"""
+
+    st.write(texto)
