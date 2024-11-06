@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#424B54"  # Verde escuro para elementos interativos
-backgroundColor = "#c5baaf"  # Verde claro, tonalidade fosca
-secondaryBackgroundColor = "#a8c0a5"  # Verde um pouco mais escuro
-textColor = "#222222"  # Cinza escuro para o texto
-font = "sans-serif"
+primaryColor = "#f63366"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+font = "sans serif"
