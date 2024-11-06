@@ -74,18 +74,7 @@ if uploaded_files is not None:
                 df = df.drop('Mês/ano referência', axis=1)
 
 
-                #st.data_editor(df)
-                # prompt: Usando o DataFrame df: fazer um cópia e combinar os dataframes
-
-                # Create a copy of the dataframe
-                df_copy = df.copy()
-
-                # Combine the copied dataframe with the original dataframe
-                combined_df = pd.concat([df, df_copy], axis=0)
-
-                # Display the combined dataframe
-                st.data_editor(combined_df)
-
+                st.data_editor(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
         #st.data_editor(list_of_dfs)
