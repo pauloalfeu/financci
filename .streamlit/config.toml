@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#BD93F9"  # Lilás claro
-backgroundColor = "#282A36"  # Cinza escuro
-secondaryBackgroundColor = "#44475A"  # Cinza um pouco mais claro
-textColor = "#F8F8F2"  # Branco quase puro
+primaryColor = "#2e9a40"  # Lilás claro
+backgroundColor = "#F0F2F6"  
+secondaryBackgroundColor = "#F1FDF1"  
+textColor = "#31333F" 
 font = "sans-serif"
