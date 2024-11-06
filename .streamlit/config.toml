@@ -1,9 +1,6 @@
-[server]
-headless = true
-
 [theme]
-primaryColor = "#FFFFFF"
-backgroundColor = "#F0F0F0"
-secondaryBackgroundColor = "#D9D9D9"
-textColor = "#262730"
-font = "sans serif"
+primaryColor = "#E0E0E0"  # Cinza claro
+backgroundColor = "#F5F5F5"  # Branco suave
+secondaryBackgroundColor = "#DCDCDC"  # Cinza mais escuro
+textColor = "#444444"  # Cinza escuro
+font = "sans-serif"
