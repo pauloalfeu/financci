@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 
+#inspo:
+#https://github.com/caiodearaujo/streamlit-awesome-table/tree/main
+#https://staggrid-examples.streamlit.app/Cookbook
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos

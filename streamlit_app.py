@@ -86,7 +86,15 @@ if uploaded_files is not None:
         if all_dfs:
             try:
                 df_final = pd.concat(all_dfs, ignore_index=True)
-                st.write(df_final)
+                contas_unicas = df_final['CONTA'].unique()
+                #st.write(df_final)
+                for conta in contas_unicas:
+                    # Filtrar o DataFrame para a conta atual
+                    df_conta = df_final[df_final['CONTA'] == conta]
+
+                    # Exibir o DataFrame da conta atual
+                    st.write(f"Dados da conta {conta}")
+                    st.dataframe(df_conta)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
         else:
