@@ -31,34 +31,35 @@ if uploaded_files is not None:
             # Iterando sobre as linhas do DataFrame
             dados = []
 
-            
+            encontrado = False
             for index, row in df.iterrows():
                 if 'Conta:' in row.values:
                     # Encontrou a linha com "Conta:"
                     numero_conta = row.iloc[row.values.tolist().index('Conta:') + 1]
                     dados.append(numero_conta)
+                    encontrado = True
                     break  # Para o loop após encontrar a primeira ocorrência
-                # Se não encontrar a linha "Conta:", imprime uma mensagem
-                if 'numero_conta' not in locals():
-                    st.error("A linha 'Conta:' não foi encontrada no DataFrame.")
+            if not encontrado:
+                st.error("'Conta' não foi encontrada no ", uploaded_file.name)
             for index, row in df.iterrows():
                 if 'Mês/ano' in row.values:
                     # Encontrou a linha com "Conta:"
                     mes_ano = row.iloc[row.values.tolist().index('Mês/ano') + 2]
                     dados.append(mes_ano)
+                    encontrado = True
                     break  # Para o loop após encontrar a primeira ocorrência
-                # Se não encontrar a linha "Conta:", imprime uma mensagem
-                if 'mes_ano' not in locals():
-                    st.error("A linha 'mes_ano' não foi encontrada no DataFrame.")
+            if not encontrado:
+                st.error("'Mês/ano' não foi encontrado no ", uploaded_file.name)
             for index, row in df.iterrows():
                 if 'LÍQUIDO' in row.values:
                     # Encontrou a linha com "Conta:"
                     rendimento = row.iloc[row.values.tolist().index('LÍQUIDO') + 1]
                     dados.append(rendimento)
+                    encontrado = True
                     break  # Para o loop após encontrar a primeira ocorrência
-                # Se não encontrar a linha "Conta:", imprime uma mensagem
-                if 'rendimento' not in locals():
-                    st.error("A linha 'rendimento' não foi encontrada no DataFrame.")
+            if not encontrado:
+                st.error("'Rendimento' não foi encontrado no ", uploaded_file.name)
+
 
 
             df = pd.DataFrame(columns=['CONTA', 'Mês/ano referência', 'RENDIMENTO LÍQUIDO'])
