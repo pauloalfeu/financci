@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
 
-#inspo:
-#https://github.com/caiodearaujo/streamlit-awesome-table/tree/main
-#https://staggrid-examples.streamlit.app/Cookbook
-
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
-uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=True)
+uploaded_files = st.file_uploader("", accept_multiple_files=True)
+
+# Lista para armazenar os DataFrames
+all_dfs = []
 
 # Processando os arquivos
 if uploaded_files is not None:
@@ -15,7 +14,6 @@ if uploaded_files is not None:
         for uploaded_file in uploaded_files:
             try:
                 linhas_limpas = []
-
                 for line in uploaded_file:
                     texto = line.decode('latin-1')
                     # Remove caracteres especiais (ajuste conforme necessário)
@@ -78,10 +76,28 @@ if uploaded_files is not None:
                 df = df.drop('Mês/ano referência', axis=1)
 
 
-                st.data_editor(df)
+                #st.data_editor(df)
+                # Adicionar o DataFrame à lista com todos
+                all_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
 
+        # Concatenar todos os DataFrames, se houver pelo menos um
+        if all_dfs:
+            try:
+                df_final = pd.concat(all_dfs, ignore_index=True)
+                contas_unicas = df_final['CONTA'].unique()
+                #st.write(df_final)
+                for conta in contas_unicas:
+                    # Filtrar o DataFrame para a conta atual
+                    df_conta = df_final[df_final['CONTA'] == conta]
 
+                    # Exibir o DataFrame da conta atual
+                    st.write(f"Dados da conta {conta}")
+                    st.dataframe(df_conta)
+            except Exception as e:
+                st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
+        else:
+            st.info("Selecione os arquivos que deseja processar clicando no botão \"Browse files\" acima.")
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")

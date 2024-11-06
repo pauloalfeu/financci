@@ -92,8 +92,12 @@ if uploaded_files is not None:
                     # Filtrar o DataFrame para a conta atual
                     df_conta = df_final[df_final['CONTA'] == conta]
 
-                    # Exibir o DataFrame da conta atual
-                    st.write(f"Dados da conta {conta}")
+                    # Calcular o total de rendimentos líquidos para a conta
+                    total_rendimento = df_conta['RENDIMENTO LÍQUIDO'].sum()
+
+                    # Exibir os resultados no Streamlit
+                    st.header(f"Dados da Conta {conta}")
+                    st.write(f"Total de Rendimentos Líquidos: R$ {total_rendimento:.2f}")
                     st.dataframe(df_conta)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
