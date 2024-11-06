@@ -156,6 +156,7 @@ if uploaded_files is not None:
                     total_rendimento = df_conta['RENDIMENTO LÍQUIDO'].sum()
 
                     # Exibir os resultados no Streamlit
+                    st.divider()
                     st.write("Dados da conta " + conta)
                     st.markdown("**Total de Rendimentos Líquidos: R$" + str(total_rendimento) + "**")
                     st.dataframe(df_conta)
