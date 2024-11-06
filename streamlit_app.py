@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-from awesome_table import AwesomeTable
-from awesome_table.column import (Column, ColumnDType)
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
