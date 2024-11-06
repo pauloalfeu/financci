@@ -90,12 +90,16 @@ if uploaded_files is not None:
                 #st.write(df_final)
                 # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
 
-                def remover_pontos_excedentes(valor):
+                # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
+                def limpar_e_converter(valor):
                     valor_str = str(valor)
-                    return float(valor_str.replace('.', '', valor_str.count('.') - 1))
+                    # Remove todos os pontos, exceto o último
+                    valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
+                    # Substitui a vírgula por ponto
+                    valor_str = valor_str.replace(',', '.')
+                    return float(valor_str)
 
-                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].str.replace(',', '.').astype(float)
-                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].aplly(remover_pontos_excedentes)
+                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].apply(limpar_e_converter)
 
                 for conta in contas_unicas:
                     # Filtrar o DataFrame para a conta atual
