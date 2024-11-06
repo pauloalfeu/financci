@@ -3,51 +3,35 @@ import numpy as np
 import pandas as pd
 
 with st.sidebar:
-    st.title("Tutorial")
-    st.write("Este é um tutorial rápido sobre como usar o aplicativo.")
+    st.title("Instruções")
+    st.write("Abaixo apresentamos um guia rápido sobre como usar o aplicativo.")
 
     # Adicione aqui o seu tutorial completo, utilizando markdown
     st.markdown("""
-    **Como usar o aplicativo:**
+    **Passo a passo:**
 
-    1. **Carregar o arquivo:** Clique no botão "Carregar Arquivo" e selecione seu arquivo CSV.
-    2. **Selecionar as colunas:** Use a caixa de seleção para escolher as colunas que deseja analisar.
-    3. **Visualizar os resultados:** Os gráficos e tabelas serão exibidos abaixo.
+    1. **Carregar o arquivo:** Clique no botão "Browse files" e selecione um ou mais arquivos .txt de rendimentos do seu computador.
+    2. **Selecionar as colunas:** Clique na caixa de seleção (no nome das colunas) para escolher ordenar os dados da maneira que deseja analisar.
+    3. **Visualizar os resultados:** As tabelas e os somatórios serão exibidos abaixo, separados por c onta bancária.
+    4. **Faça o download das tabelas:** Se desejar, é possível baixar as tabelas individualmente. Para isso passe o cursor do mouse sobre a tabela desejada e clique no ícone de download.
 
     **Dicas:**
-    * Para mais informações sobre os formatos de arquivo suportados, consulte a documentação.
-    * Se você tiver alguma dúvida, entre em contato com o suporte.
+    * Para mais informações sobre os formatos de arquivo suportados, ou ainda, se você tiver alguma dúvida extra, entre em contato com o suporte.
     """)
 
-    
+
 st.markdown("""
-## Bem-vindo ao seu Analisador de Rendimentos!
+## 🎯 Bem-vindo ao seu Gerenciador de Rendimentos!
 
 Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma rápida e eficiente.
 
-**Como utilizar:**
-
-1. **Prepare seu arquivo:**
-   * Certifique-se de que seu arquivo está no formato .txt.
-   * Cada linha do arquivo deve conter as informações de um rendimento, separadas por vírgulas ou outro delimitador (por exemplo: data, valor, descrição).
-   * **Exemplo:**
-     ```
-     01/01/2023,1000.50,Juros
-     15/01/2023,500.25,Dividendos
-     ```
-
-2. **Faça o upload do arquivo:**
-   * Clique no botão "Upload de Arquivo" e selecione o arquivo .txt que você preparou.
-
-3. **Visualize seus resultados:**
-   * Após o upload, o aplicativo irá processar o arquivo e exibir um resumo dos seus rendimentos, incluindo gráficos e tabelas.
-
 **Observações:**
 
-* **Formato do arquivo:** O formato do arquivo é crucial para o correto funcionamento do aplicativo. Por favor, verifique se o seu arquivo está no formato especificado.
-* **Delimitadores:** Se os dados do seu arquivo estiverem separados por outro caractere além da vírgula, você pode ajustar o código do aplicativo para processar o arquivo corretamente.
+* **Formato do arquivo:** O formato do arquivo é crucial para o correto funcionamento do aplicativo. Por favor, verifique se o seu arquivo está no formato especificado (.txt).
+* **Delimitadores:** Se os dados do seu arquivo estiverem separados por algum caractere estranho para o processamento dos dados, você receberá uma mensagem de erro indicando qual arquivo está com erro - ele deve ser removido da lista de uploads clicando no "X" - você pode tentar processar o arquivo corretamente novamente.
+* **Erro comum:** Grande parte das mensagens de erro podem indicar que o arquivo enviado não possui dados para leitura, por não haver rendimentos no período incicado (tente verificar no aplicativo bancário se realmente houve rendimento).
 
-**Dúvidas?** 
+**Dúvidas extras?** 
 Entre em contato com o desenvolvedor.
 """)
 
