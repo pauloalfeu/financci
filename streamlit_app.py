@@ -9,7 +9,8 @@ uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=T
 # Processando os arquivos
 if uploaded_files is not None:
 #    try:
-        for uploaded_file in uploaded_files:
+    list_of_dfs = []
+    for uploaded_file in uploaded_files:
             try:
                 linhas_limpas = []
 
@@ -75,8 +76,12 @@ if uploaded_files is not None:
                 df = df.drop('Mês/ano referência', axis=1)
 
 
-                st.data_editor(df)
+                #st.data_editor(df)
+                list_of_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
+        # prompt: Usando o DataFrame df: fazer um cópia e combinar os dataframes com contas iguais
+    st.data_editor(list_of_dfs)
+
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
