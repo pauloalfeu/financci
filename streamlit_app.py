@@ -3,13 +3,16 @@ import pandas as pd
 from awesome_table import AwesomeTable
 from awesome_table.column import (Column, ColumnDType)
 
+st.set_page_config(page_title='Financci by @pauloalfeu', page_icon='📊')
+st.title('Gerenciador de rendimentos para análise e prestação de contas.')
+
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
 uploaded_files = st.file_uploader("", accept_multiple_files=True)
 
 # Lista para armazenar os DataFrames
 all_dfs = []
-
+st.sidebar.header('Awesome')
 # Processando os arquivos
 if uploaded_files is not None:
 #    try:
