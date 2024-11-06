@@ -1,6 +1,14 @@
 [theme]
-primaryColor = "#A5571D"  
-backgroundColor = "#44475A"  # Cinza escuro
-secondaryBackgroundColor = "#282A36"  # Cinza um pouco mais claro
+primaryColor = "#BD93F9"  # Lilás claro
+backgroundColor = "#282A36"  # Cinza escuro
+secondaryBackgroundColor = "#44475A"  # Cinza um pouco mais claro
 textColor = "#F8F8F2"  # Branco quase puro
 font = "sans-serif"
+
+
+
+#primaryColor = "#A5571D"  
+#backgroundColor = "#44475A"  # Cinza escuro
+#secondaryBackgroundColor = "#282A36"  # Cinza um pouco mais claro
+#textColor = "#F8F8F2"  # Branco quase puro
+#font = "sans-serif"
