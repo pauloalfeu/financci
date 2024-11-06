@@ -6,3 +6,4 @@ seaborn
 wordcloud
 Counter
 awesome_table
+awesome_table.column
