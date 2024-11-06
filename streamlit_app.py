@@ -91,8 +91,8 @@ if uploaded_files is not None:
                 # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
 
                 def remover_pontos_excedentes(valor):
-                valor_str = str(valor)
-                return float(valor_str.replace('.', '', valor_str.count('.') - 1))
+                    valor_str = str(valor)
+                    return float(valor_str.replace('.', '', valor_str.count('.') - 1))
 
                 df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].str.replace(',', '.').astype(float)
                 df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].aplly(remover_pontos_excedentes)
