@@ -6,6 +6,9 @@ import pandas as pd
 # Permite o upload de múltiplos arquivos
 uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=True)
 
+# Lista para armazenar os DataFrames
+all_dfs = []
+
 # Processando os arquivos
 if uploaded_files is not None:
 #    try:
@@ -74,9 +77,11 @@ if uploaded_files is not None:
                 df = df.drop('Mês/ano referência', axis=1)
 
 
-                st.data_editor(df)
+                #st.data_editor(df)
+                all_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
-
+        df_final = pd.concat(all_dfs, ignore_index=True)
+        st.data_editor(df_final)
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
