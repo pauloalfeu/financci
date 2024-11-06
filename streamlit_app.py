@@ -77,7 +77,7 @@ if uploaded_files is not None:
 
 
                 #st.data_editor(df)
-                list_of_dfs.append(df)
+                list_of_dfs = pd.concat([list_of_dfs, df], axis=0)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
         # prompt: Usando o DataFrame df: fazer um cópia e combinar os dataframes com contas iguais
