@@ -88,18 +88,21 @@ if uploaded_files is not None:
                 df_final = pd.concat(all_dfs, ignore_index=True)
                 contas_unicas = df_final['CONTA'].unique()
                 #st.write(df_final)
-                # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
 
                 # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
                 def limpar_e_converter(valor):
+                    valor_str = str(valor)
+                    # Remove todos os pontos, exceto o último
+                    valor_str = valor_str.rstrip('.')  # Remove pontos no final
+                    valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
+                    # Substitui a vírgula por ponto
+                    valor_str = valor_str.replace(',', '.')
+                    # Remove espaços em branco
+                    valor_str = valor_str.strip()
                     try:
-                        valor_str = str(valor)
-                        # Remove todos os pontos, exceto o último
-                        valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
-                        # Substitui a vírgula por ponto
-                        valor_str = valor_str.replace(',', '.')
+                        return float(valor_str)
                     except ValueError:
-                        st.write(f"Erro ao converter {valor} para float.")
+                        print(f"Erro ao converter {valor} para float.")
                         return np.nan
 
                 df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].apply(limpar_e_converter)
