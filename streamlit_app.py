@@ -90,7 +90,7 @@ if uploaded_files is not None:
                 #st.write(df_final)
                 # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
                 df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].str.replace(r'(?<!\d)\.', '').astype(float)
-                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].str.replace(',', '.')
+                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].str.replace(',', '.').astype(float)
 
                 for conta in contas_unicas:
                     # Filtrar o DataFrame para a conta atual
