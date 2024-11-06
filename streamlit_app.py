@@ -4,7 +4,7 @@ import pandas as pd
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
-uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=True)
+uploaded_files = st.file_uploader("", accept_multiple_files=True)
 
 # Lista para armazenar os DataFrames
 all_dfs = []
