@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import  streamlit_toggle as tog
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
@@ -95,7 +95,7 @@ if uploaded_files is not None:
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
 
-import  streamlit_toggle as tog
+
 
 tog.st_toggle_switch(label="Label", 
                     key="Key1", 
