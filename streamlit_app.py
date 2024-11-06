@@ -73,4 +73,4 @@ if uploaded_files is not None:
 
             st.data_editor(df)
     except Exception as e:
-        st.exception(e)
+        st.error("Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.")
