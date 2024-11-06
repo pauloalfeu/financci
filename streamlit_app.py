@@ -78,10 +78,19 @@ if uploaded_files is not None:
 
 
                 #st.data_editor(df)
+                # Adicionar o DataFrame à lista com todos
                 all_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
-        df_final = pd.concat(all_dfs, ignore_index=True)
-        st.data_editor(df_final)
+
+        # Concatenar todos os DataFrames, se houver pelo menos um
+        if all_dfs:
+            try:
+                df_final = pd.concat(all_dfs, ignore_index=True)
+                st.write(df_final)
+            except Exception as e:
+                st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
+        else:
+            st.info("Nenhum arquivo foi carregado ou os arquivos não puderam ser processados.")
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
