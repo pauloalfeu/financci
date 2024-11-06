@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-
+from awesome_table import AwesomeTable
+from awesome_table.column import (Column, ColumnDType)
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
@@ -87,7 +88,14 @@ if uploaded_files is not None:
         if all_dfs:
             try:
                 df_final = pd.concat(all_dfs, ignore_index=True)
-                st.write(df_final)
+                sample_data = df_final
+                AwesomeTable(pd.json_normalize(sample_data), columns=[
+                    Column(name='id', label='ID'),
+                    Column(name='CONTA', label='Conta'),
+                    Column(name='RENDIMENTO LÍQUIDO', label='Rendimento Líquido'),
+                    Column(name='MÊS', label='Mês'),
+                    Column(name='ANO', label='Ano'),
+                ], show_order=True, show_search=True, show_search_order_in_sidebar=True)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
         else:
