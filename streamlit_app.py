@@ -10,9 +10,9 @@ uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=T
 if uploaded_files is not None:
 #    try:
         for uploaded_file in uploaded_files:
+            list_of_dfs = []
             try:
                 linhas_limpas = []
-                list_of_dfs = []
                 for line in uploaded_file:
                     texto = line.decode('latin-1')
                     # Remove caracteres especiais (ajuste conforme necessário)
@@ -77,9 +77,9 @@ if uploaded_files is not None:
 
                 #st.data_editor(df)
                 list_of_dfs.append(df)
-                st.data_editor(list_of_dfs)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
+            st.data_editor(list_of_dfs)
 
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
