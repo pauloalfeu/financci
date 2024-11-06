@@ -75,11 +75,11 @@ if uploaded_files is not None:
                 df = df.drop('Mês/ano referência', axis=1)
 
 
-                st.data_editor(df)
+                #st.data_editor(df)
                 list_of_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
-
+        st.data_editor(list_of_dfs)
 
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
