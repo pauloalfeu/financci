@@ -76,4 +76,4 @@ if uploaded_files is not None:
 
             st.data_editor(df)
     except Exception as e:
-        st.error("Ocorreu um erro inesperado com o arquivo enviado. Por favor, tente novamente. (ARQUIVO COM ERRO:", uploaded_file.name, ")")
+        st.error("Ocorreu um erro inesperado com o arquivo enviado. Por favor, tente novamente. ARQUIVO COM ERRO:", uploaded_file.name)
