@@ -1,5 +1,7 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
+
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
