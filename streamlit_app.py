@@ -9,7 +9,6 @@ uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=T
 # Processando os arquivos
 if uploaded_files is not None:
 #    try:
-        list_of_dfs = []
         for uploaded_file in uploaded_files:
             try:
                 linhas_limpas = []
@@ -31,7 +30,7 @@ if uploaded_files is not None:
 
                 # Iterando sobre as linhas do DataFrame
                 dados = []
-
+                list_of_dfs = []
                 encontrado = False
                 for index, row in df.iterrows():
                     if 'Conta:' in row.values:
@@ -76,10 +75,11 @@ if uploaded_files is not None:
 
 
                 #st.data_editor(df)
-                list_of_dfs = pd.concat([df, list_of_dfs], axis=0)
+                list_of_dfs.append(df)
+                st.data_editor(list_of_dfs)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
-        st.data_editor(list_of_dfs)
+        #st.data_editor(list_of_dfs)
 
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
