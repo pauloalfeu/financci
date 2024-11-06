@@ -118,7 +118,7 @@ if uploaded_files is not None:
 
                     # Exibir os resultados no Streamlit
                     st.write("Dados da conta " + conta)
-                    st.write("Total de Rendimentos Líquidos: R$ " + str(total_rendimento) + ".2f")
+                    st.write("Total de Rendimentos Líquidos: R$ " + str(total_rendimento))
                     st.dataframe(df_conta)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
