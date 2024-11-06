@@ -3,6 +3,44 @@ import numpy as np
 import pandas as pd
 
 
+st.markdown("""
+## Bem-vindo ao seu Analisador de Rendimentos!
+
+Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma rápida e eficiente.
+
+**Como utilizar:**
+
+1. **Prepare seu arquivo:**
+   * Certifique-se de que seu arquivo está no formato .txt.
+   * Cada linha do arquivo deve conter as informações de um rendimento, separadas por vírgulas ou outro delimitador (por exemplo: data, valor, descrição).
+   * **Exemplo:**
+     ```
+     01/01/2023,1000.50,Juros
+     15/01/2023,500.25,Dividendos
+     ```
+
+2. **Faça o upload do arquivo:**
+   * Clique no botão "Upload de Arquivo" e selecione o arquivo .txt que você preparou.
+
+3. **Visualize seus resultados:**
+   * Após o upload, o aplicativo irá processar o arquivo e exibir um resumo dos seus rendimentos, incluindo gráficos e tabelas.
+
+**Observações:**
+
+* **Formato do arquivo:** O formato do arquivo é crucial para o correto funcionamento do aplicativo. Por favor, verifique se o seu arquivo está no formato especificado.
+* **Delimitadores:** Se os dados do seu arquivo estiverem separados por outro caractere além da vírgula, você pode ajustar o código do aplicativo para processar o arquivo corretamente.
+
+**Dúvidas?** 
+Entre em contato com o desenvolvedor.
+""")
+
+st.divider()
+
+
+
+
+
+
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
 uploaded_files = st.file_uploader("", accept_multiple_files=True)
