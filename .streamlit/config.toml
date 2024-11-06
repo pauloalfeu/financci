@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#79aec8"  # Azul claro
-backgroundColor = "#f0f0f0"  # Branco acinzentado
-secondaryBackgroundColor = "#e0e0e0"  # Cinza claro
-textColor = "#333333"  # Cinza escuro
+primaryColor = "#336633"  # Verde escuro para elementos interativos
+backgroundColor = "#c2d5cb"  # Verde claro, tonalidade fosca
+secondaryBackgroundColor = "#a8c0a5"  # Verde um pouco mais escuro
+textColor = "#222222"  # Cinza escuro para o texto
 font = "sans-serif"
