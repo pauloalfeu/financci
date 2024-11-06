@@ -91,6 +91,6 @@ if uploaded_files is not None:
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
         else:
-            st.info("Selecione os arquivos que deseja processar em \"Browse files\" ")
+            st.info("Selecione os arquivos que deseja processar clicando no botão \"Browse files\" acima")
 #    except Exception as e:
 #        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
