@@ -2,7 +2,24 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+with st.sidebar:
+    st.title("Tutorial")
+    st.write("Este é um tutorial rápido sobre como usar o aplicativo.")
 
+    # Adicione aqui o seu tutorial completo, utilizando markdown
+    st.markdown("""
+    **Como usar o aplicativo:**
+
+    1. **Carregar o arquivo:** Clique no botão "Carregar Arquivo" e selecione seu arquivo CSV.
+    2. **Selecionar as colunas:** Use a caixa de seleção para escolher as colunas que deseja analisar.
+    3. **Visualizar os resultados:** Os gráficos e tabelas serão exibidos abaixo.
+
+    **Dicas:**
+    * Para mais informações sobre os formatos de arquivo suportados, consulte a documentação.
+    * Se você tiver alguma dúvida, entre em contato com o suporte.
+    """)
+
+    
 st.markdown("""
 ## Bem-vindo ao seu Analisador de Rendimentos!
 
