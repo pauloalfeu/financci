@@ -88,6 +88,9 @@ if uploaded_files is not None:
                 df_final = pd.concat(all_dfs, ignore_index=True)
                 contas_unicas = df_final['CONTA'].unique()
                 #st.write(df_final)
+                # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
+                df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].astype(float)
+
                 for conta in contas_unicas:
                     # Filtrar o DataFrame para a conta atual
                     df_conta = df_final[df_final['CONTA'] == conta]
@@ -96,8 +99,8 @@ if uploaded_files is not None:
                     total_rendimento = df_conta['RENDIMENTO LÍQUIDO'].sum()
 
                     # Exibir os resultados no Streamlit
-                    st.write(f"Dados da conta {conta}")
-                    st.write(f"Total de Rendimentos Líquidos: R$ {total_rendimento:.2f}")
+                    st.write("Dados da conta " + conta)
+                    st.write("Total de Rendimentos Líquidos: R$ " + str(total_rendimento) + ".2f")
                     st.dataframe(df_conta)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
