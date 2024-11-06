@@ -8,7 +8,7 @@ uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=T
 
 # Processando os arquivos
 if uploaded_files is not None:
-    try:
+#    try:
         for uploaded_file in uploaded_files:
             try:
                 linhas_limpas = []
@@ -78,5 +78,5 @@ if uploaded_files is not None:
                 st.data_editor(df)
             except Exception as e:
                 st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.", uploaded_file.name)
-    except Exception as e:
-        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
+#    except Exception as e:
+#        st.error("Ocorreu um erro inesperado com um dos arquivos enviados. Por favor, tente novamente.")
