@@ -9,8 +9,8 @@ uploaded_files = st.file_uploader("Escolha os arquivos", accept_multiple_files=T
 # Processando os arquivos
 if uploaded_files is not None:
 #    try:
+        list_of_dfs = []
         for uploaded_file in uploaded_files:
-            list_of_dfs = []
             try:
                 linhas_limpas = []
                 for line in uploaded_file:
