@@ -39,7 +39,7 @@ if uploaded_files is not None:
                     dados.append(numero_conta)
                     #break  # Para o loop após encontrar a primeira ocorrência
                 # Se não encontrar a linha "Conta:", imprime uma mensagem
-                if 'numero_conta' not in locals():
+                else:
                     st.write("A linha 'Conta:' não foi encontrada no DataFrame.")
                 if 'Mês/ano' in row.values:
                     # Encontrou a linha com "Conta:"
