@@ -12,7 +12,7 @@ if uploaded_files is not None:
         for uploaded_file in uploaded_files:
             try:
                 linhas_limpas = []
-
+                list_of_dfs = []
                 for line in uploaded_file:
                     texto = line.decode('latin-1')
                     # Remove caracteres especiais (ajuste conforme necessário)
@@ -76,6 +76,7 @@ if uploaded_files is not None:
 
 
                 st.data_editor(df)
+                list_of_dfs.append(df)
             except Exception as e:
                 st.error(f"Ocorreu um erro inesperado com o arquivo: \"{uploaded_file.name}\" presente nos arquivos enviados. Por favor, verifique-o e tente novamente.")
 
