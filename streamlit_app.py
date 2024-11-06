@@ -96,7 +96,7 @@ if uploaded_files is not None:
                     total_rendimento = df_conta['RENDIMENTO LÍQUIDO'].sum()
 
                     # Exibir os resultados no Streamlit
-                    st.header(f"Dados da Conta {conta}")
+                    st.write(f"Dados da conta {conta}")
                     st.write(f"Total de Rendimentos Líquidos: R$ {total_rendimento:.2f}")
                     st.dataframe(df_conta)
             except Exception as e:
