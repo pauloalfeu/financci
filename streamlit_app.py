@@ -92,12 +92,15 @@ if uploaded_files is not None:
 
                 # Convertendo a coluna 'RENDIMENTO LÍQUIDO' para float
                 def limpar_e_converter(valor):
-                    valor_str = str(valor)
-                    # Remove todos os pontos, exceto o último
-                    valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
-                    # Substitui a vírgula por ponto
-                    valor_str = valor_str.replace(',', '.')
-                    return float(valor_str)
+                    try:
+                        valor_str = str(valor)
+                        # Remove todos os pontos, exceto o último
+                        valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
+                        # Substitui a vírgula por ponto
+                        valor_str = valor_str.replace(',', '.')
+                    except ValueError:
+                        st.write(f"Erro ao converter {valor} para float.")
+                        return np.nan
 
                 df_final['RENDIMENTO LÍQUIDO'] = df_final['RENDIMENTO LÍQUIDO'].apply(limpar_e_converter)
 
