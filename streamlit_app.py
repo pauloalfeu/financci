@@ -34,7 +34,7 @@ Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma r
 
 """)
 
-st.info("**Delimitadores:** Se os dados do seu arquivo estiverem separados por algum caractere estranho para o processamento dos dados você receberá uma mensagem de erro indicando qual arquivo está com o erro - ele deve ser removido da lista de uploads clicando no **"X"** - você pode tentar processar o arquivo corretamente novamente.")
+st.info("**Delimitadores:** Se os dados do seu arquivo estiverem separados por algum caractere estranho para o processamento dos dados você receberá uma mensagem de erro indicando qual arquivo está com o erro - ele deve ser removido da lista de uploads clicando no **""X""** - você pode tentar processar o arquivo corretamente novamente.")
 
 st.markdown("""
 **Dúvidas extras?** 
