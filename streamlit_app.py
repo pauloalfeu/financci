@@ -16,10 +16,7 @@ with st.sidebar:
     4. **Faça o download das tabelas:** Se desejar, é possível baixar as tabelas individualmente. Para isso, passe o cursor do mouse sobre a tabela desejada e clique no ícone de download.
     
     """)
-    st.sidebar.warning("""
-    **Aviso:** Os dados que você enviar serão utilizados apenas para a execução deste aplicativo e **não serão salvos** em nossa base de dados. 
-    Sua privacidade é importante para nós.
-    """)
+
 
 st.markdown("<h1 style='color: rgb(0, 66, 128);'> 📝 Gerenciador de Rendimentos</h1>", unsafe_allow_html=True)
 st.markdown("""
@@ -49,6 +46,10 @@ st.markdown("""
 
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
+st.warning("""
+    **Aviso:** Os dados que você enviar serão utilizados apenas para a execução deste aplicativo e **não serão salvos** em nossa base de dados. 
+    Sua privacidade é importante para nós.
+    """)
 uploaded_files = st.file_uploader("", accept_multiple_files=True)
 
 # Lista para armazenar os DataFrames
