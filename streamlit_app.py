@@ -38,7 +38,8 @@ st.info("**Problema com o arquivo?** Se você ver uma mensagem de erro, é prov�
 
 st.markdown("""
 **Dúvidas extras?** Entre em contato com o desenvolvedor.
----""")
+---
+""")
 #st.divider()
 
 
