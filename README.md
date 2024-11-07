@@ -21,17 +21,18 @@ Este gerenciador de rendimentos é uma ferramenta poderosa para:
 
 ## Disponível para acesso em:
 
-[![Financci no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financci.streamlit.app/)
+Acesse clicando na imagem: [![Financci no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financci.streamlit.app/)
+Dúvidas e/ou sugestões? Entre em contato com o desenvolvedor.
 
 ### Instalação
 
-1. Install the requirements
+1. Instale os requisitos
 
    ```
    $ pip install -r requirements.txt
    ```
 
-2. Run the app
+2. Executar o aplicativo
 
    ```
    $ streamlit run streamlit_app.py
