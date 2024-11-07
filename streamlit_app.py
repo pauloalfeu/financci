@@ -18,7 +18,7 @@ with st.sidebar:
     """)
 
 
-st.markdown("<h1 style='color: rgb(0, 66, 128);'> 📝 Calculador de Rendimentos</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: rgb(0, 66, 128); text-align: center;'> 📝 Calculador de Rendimentos</h1>", unsafe_allow_html=True)
 st.markdown("""
 
 Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma rápida e eficiente.
