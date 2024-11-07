@@ -19,9 +19,8 @@ Este gerenciador de rendimentos é uma ferramenta poderosa para:
 * **Gráficos:** Visualize seus dados financeiros em gráficos intuitivos para uma melhor compreensão.
 
 
-## Disponível para acesso em:
+## Disponível para acesso em: [![Financci no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financci.streamlit.app/)
 
-Acesse clicando na imagem: [![Financci no Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financci.streamlit.app/)
 Dúvidas e/ou sugestões? Entre em contato com o desenvolvedor.
 
 ### Instalação
