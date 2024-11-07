@@ -23,7 +23,7 @@ with st.sidebar:
 
 
 st.markdown("""
-## 🎯 Bem-vindo ao seu Gerenciador de Rendimentos!
+### 🎯 Bem-vindo ao seu Gerenciador de Rendimentos!
 
 Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma rápida e eficiente.
 
