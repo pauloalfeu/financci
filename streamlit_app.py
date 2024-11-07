@@ -12,11 +12,12 @@ with st.sidebar:
 
     1. **Carregar o arquivo:** Clique no botão "Browse files" e selecione um ou mais arquivos .txt de rendimentos do seu computador.
     2. **Selecionar as colunas:** Clique na caixa de seleção (no nome das colunas) para escolher ordenar os dados da maneira que deseja analisar.
-    3. **Visualizar os resultados:** As tabelas e os somatórios serão exibidos abaixo, separados por c onta bancária.
-    4. **Faça o download das tabelas:** Se desejar, é possível baixar as tabelas individualmente. Para isso passe o cursor do mouse sobre a tabela desejada e clique no ícone de download.
-
-    **Dicas:**
-    * Para mais informações sobre os formatos de arquivo suportados, ou ainda, se você tiver alguma dúvida extra, entre em contato com o suporte.
+    3. **Visualizar os resultados:** As tabelas e os somatórios serão exibidos abaixo, separados por conta bancária.
+    4. **Faça o download das tabelas:** Se desejar, é possível baixar as tabelas individualmente. Para isso, passe o cursor do mouse sobre a tabela desejada e clique no ícone de download.
+    """)
+    st.sidebar.warning("""
+    **Aviso:** Os dados que você enviar serão utilizados apenas para a execução deste aplicativo e **não serão salvos** em nossa base de dados. 
+    Sua privacidade é importante para nós.
     """)
 
 
@@ -27,9 +28,9 @@ Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma r
 
 **Observações:**
 
-* **Formato do arquivo:** O formato do arquivo é crucial para o correto funcionamento do aplicativo. Por favor, verifique se o seu arquivo está no formato especificado (.txt).
-* **Delimitadores:** Se os dados do seu arquivo estiverem separados por algum caractere estranho para o processamento dos dados, você receberá uma mensagem de erro indicando qual arquivo está com erro - ele deve ser removido da lista de uploads clicando no "X" - você pode tentar processar o arquivo corretamente novamente.
-* **Erro comum:** Grande parte das mensagens de erro podem indicar que o arquivo enviado não possui dados para leitura, por não haver rendimentos no período incicado (tente verificar no aplicativo bancário se realmente houve rendimento).
+* **Formato do arquivo:** O formato do arquivo é crucial para o correto funcionamento do aplicativo. Por favor, verifique se o seu arquivo está no formato especificado _(.txt)_.
+* **Delimitadores:** Se os dados do seu arquivo estiverem separados por algum caractere estranho para o processamento dos dados você receberá uma mensagem de erro indicando qual arquivo está com o erro - ele deve ser removido da lista de uploads clicando no **"X"** - você pode tentar processar o arquivo corretamente novamente.
+> **Erro comum:** Grande parte das mensagens de erro podem indicar que o arquivo enviado não possui dados para leitura, por não haver rendimentos no período indicado (tente verificar no aplicativo bancário se realmente houve rendimento).
 
 **Dúvidas extras?** 
 Entre em contato com o desenvolvedor.
