@@ -21,9 +21,8 @@ with st.sidebar:
     Sua privacidade é importante para nós.
     """)
 
-st.markdown("<h1 style='color: #FF0000;'>Meu Título Impactante em Vermelho</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: rgb(0, 66, 128);'>Gerenciador de Rendimentos</h1>", unsafe_allow_html=True)
 st.markdown("""
-### 🎯 Bem-vindo ao seu Gerenciador de Rendimentos!
 
 Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma rápida e eficiente.
 
