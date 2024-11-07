@@ -140,9 +140,9 @@ if uploaded_files is not None:
                     valor_str = str(valor)
                     # Remove todos os pontos, exceto o último
                     valor_str = valor_str.rstrip('.')  # Remove pontos no final
-                    valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
                     # Substitui a vírgula por ponto
                     valor_str = valor_str.replace(',', '.')
+                    valor_str = valor_str.replace('.', '', valor_str.count('.') - 1)
                     # Remove espaços em branco
                     valor_str = valor_str.strip()
                     try:
