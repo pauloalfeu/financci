@@ -37,8 +37,9 @@ Este aplicativo te ajudará a analisar os seus rendimentos bancários de forma r
 st.info("**Problema com o arquivo?** Se você ver uma mensagem de erro, é provável que o arquivo tenha um formato inesperado. Clique no **'X'** para removê-lo e tente novamente.")
 
 st.markdown("""
-**Dúvidas extras?** Entre em contato com o desenvolvedor.""")
-st.divider()
+**Dúvidas extras?** Entre em contato com o desenvolvedor.
+---""")
+#st.divider()
 
 
 
