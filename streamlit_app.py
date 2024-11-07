@@ -47,7 +47,7 @@ st.markdown("""
 #uploaded_file = st.file_uploader("Add text file !")
 # Permite o upload de múltiplos arquivos
 st.warning("""
-    **Aviso:** Os dados que você enviar serão processados apenas durante o uso do aplicativo e **não serão armazenados**, garantindo a sua privacidade e a segurança da sua informação.
+    **Aviso:** Os dados que você enviar serão processados apenas durante o uso do aplicativo e **não serão armazenados**, garantindo a sua privacidade e a segurança de suas informações.
     """)
 uploaded_files = st.file_uploader("**Adicione os arquivos aqui:**", accept_multiple_files=True)
 
