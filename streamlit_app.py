@@ -21,7 +21,7 @@ with st.sidebar:
     Sua privacidade é importante para nós.
     """)
 
-
+st.markdown("<h1 style='color: #FF0000;'>Meu Título Impactante em Vermelho</h1>", unsafe_allow_html=True)
 st.markdown("""
 ### 🎯 Bem-vindo ao seu Gerenciador de Rendimentos!
 
