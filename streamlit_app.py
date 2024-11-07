@@ -50,7 +50,7 @@ st.warning("""
     **Aviso:** Os dados que você enviar serão utilizados apenas para a execução deste aplicativo e **não serão salvos** em nossa base de dados. 
     Sua privacidade é importante para nós.
     """)
-uploaded_files = st.file_uploader("", accept_multiple_files=True)
+uploaded_files = st.file_uploader("Adicione os arquivos aqui:", accept_multiple_files=True)
 
 # Lista para armazenar os DataFrames
 all_dfs = []
