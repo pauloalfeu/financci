@@ -166,7 +166,7 @@ if uploaded_files is not None:
                     st.divider()
                     st.write("Dados da conta " + conta)
                     st.markdown("**Total de Rendimentos Líquidos: R$" + str("{:.2f}".format(total_rendimento)) + "**")
-                    st.dataframe(df_conta)
+                    st.data_editor(df_conta)
             except Exception as e:
                 st.error(f"Ocorreu um erro ao concatenar os DataFrames: {e}")
         else:
